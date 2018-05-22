@@ -9,9 +9,9 @@
 Product.destroy_all
 table = 'products'
 auto_inc_val = 1
-ActiveRecord::Base.connecton.execute(
+ActiveRecord::Base.connection.execute(
   "ALTER SEQUENCE #{table}_id_seq RESTART WITH #{auto_inc_val}"
 )
-Product.create(title: 'Runy Book', description: 'Learn Ruby programing', price: 12.99, published: true)
-Product.create(title: 'JQuery Book', description: 'Learn JQuery', price: 11.99, published: true)
-Product.create(title: 'SASS Book', description: 'Learn CSS with SASS', price: 19.99, published: true)
+Product.create(title: 'Runy Book', description: '<h>Learn Ruby programing</h>', price: 12.99, published: true)
+Product.create(title: 'JQuery Book', description: 'Learn <i>JQuery', price: 11.99, published: true)
+Product.create(title: 'SASS Book', description: 'Learn CSS<br/> with SASS', price: 19.99, published: true)
