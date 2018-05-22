@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than: 0 }
   before_save :strip_html_from_description
   before_save :lower_case_title
+  belongs_to :category
 
   def title_is_shorter_than_description
     return if title.blank? || description.blank?
