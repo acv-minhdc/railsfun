@@ -16,14 +16,14 @@ ActiveRecord::Base.connection.execute(
 ActiveRecord::Base.connection.execute(
   "ALTER SEQUENCE #{table2}_id_seq RESTART WITH #{auto_inc_val}"
 )
-
-c = Category.create(name: 'Programing languages')
-c.products.create(title: 'Papers', description: 'description about papers', price: 10, published: true)
+binding.pry
+c = Category.create!(name: 'Programing languages')
+c.products.create!(title: 'Papers', description: 'description about papers', price: 10, published: true)
 
 p = Array.new
-p << Product.create(title: 'Runy Book', description: '<h>Learn Ruby programing</h>', price: 12.99, published: true)
-p << Product.create(title: 'JQuery Book', description: 'Learn <i>JQuery', price: 11.99, published: true)
-p << Product.create(title: 'SASS Book', description: 'Learn CSS<br/> with SASS', price: 19.99, published: true)
+p << Product.create!(title: 'Runy Book', description: '<h>Learn Ruby programing</h>', price: 12.99, published: true)
+p << Product.create!(title: 'JQuery Book', description: 'Learn <i>JQuery', price: 11.99, published: true)
+p << Product.create!(title: 'SASS Book', description: 'Learn CSS<br/> with SASS', price: 19.99, published: true)
 
 p.each { |i| c.products << p }
 puts 'Category title: ' + Product.first.category.inspect
