@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   validate :title_is_shorter_than_description
   validates :price, presence: true, numericality: { greater_than: 0 }
   before_save :strip_html_from_description
+  before_save :lower_case_title
 
   def title_is_shorter_than_description
     return if title.blank? || description.blank?
@@ -15,6 +16,10 @@ class Product < ApplicationRecord
 
   def strip_html_from_description
     self.description = ActionView::Base.full_sanitizer.sanitize(self.description)
+  end
+
+  def lower_case_title
+    self.title = self.title.downcase
   end
 
 end
