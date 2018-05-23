@@ -1,13 +1,13 @@
 class Product < ApplicationRecord
   extend Enumerize
   enumerize :level, in: { easy: 1, medium: 2, hard: 3 }
-  enumerize :country
+  # enumerize :country
   validates :title, :description, presence: true
   validate :title_is_shorter_than_description
   validates :price, presence: true, numericality: { greater_than: 0 }
   before_save :strip_html_from_description
   before_save :lower_case_title
-  belongs_to :category
+  belongs_to :category, optional: true
 
   scope :published, -> { where(published: true) }
   scope :priced_more_than, -> (price) { where('price > ?', price) }

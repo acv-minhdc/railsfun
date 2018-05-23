@@ -19,7 +19,7 @@ ActiveRecord::Base.connection.execute(
 # binding.pry
 c = Category.create!(name: 'Programing languages')
 # c.products.create!(title: 'Papers', description: 'description about papers', price: 10, published: true)
-c.products.create!(title: 'Runy Book', description: '<h>Learn Ruby programing</h>', price: 12.99, published: true)
+c.products.create!(title: 'Ruby Book', description: '<h>Learn Ruby programing</h>', price: 12.99, published: true)
 c.products.create!(title: 'JQuery Book', description: 'Learn <i>JQuery', price: 11.99, published: true)
 c.products.create!(title: 'SASS Book', description: 'Learn CSS<br/> with SASS', price: 19.99, published: true)
 
