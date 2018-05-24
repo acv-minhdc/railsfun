@@ -9,6 +9,7 @@ gem 'rails', '~> 5.2.0'
 gem 'sqlite3'
 gem 'pg'
 gem 'enumerize'
+gem "slim-rails"
 # gem 'countries'
 gem 'formtastic', '~> 3.0'
 gem 'country_select'
