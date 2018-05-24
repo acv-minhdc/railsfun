@@ -7,9 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Product.destroy_all
 Category.destroy_all
+
 table1 = 'products'
 table2 = 'categories'
 auto_inc_val = 1
+
 ActiveRecord::Base.connection.execute(
   "ALTER SEQUENCE #{table1}_id_seq RESTART WITH #{auto_inc_val}"
 )

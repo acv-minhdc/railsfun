@@ -28,5 +28,4 @@ class Product < ApplicationRecord
   def lower_case_title
     self.title = self.title.downcase
   end
-
 end
