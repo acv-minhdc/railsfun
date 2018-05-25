@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'pg'
 gem 'enumerize'
 gem "slim-rails"
+gem 'simple_form'
 # gem 'countries'
 gem 'formtastic', '~> 3.0'
 gem 'country_select'

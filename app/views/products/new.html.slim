@@ -1,8 +1,9 @@
-form = semantic_form_for @product do |f|
-  = f.input :title
-  = f.input :description
-  = f.input :price, min: 0.01
-  = f.input :category
-  = f.input :country
-  = f.input :published
-  = f.action :submit
+.container
+  = simple_form_for @product do |f|
+      = f.input :title
+      = f.input :description
+      = f.input :price, min: 0.01
+      = f.association :category
+      = f.input :country
+      = f.input :published
+      = f.button :submit
